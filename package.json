@@ -1,0 +1,13 @@
+{
+	"name": "basic-frontend-library",
+	"version": "1.0.0",
+	"main": "index.js",
+	"directories": {
+		"lib": "lib"
+	},
+	"scripts": {},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": ""
+}
