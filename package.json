@@ -5,7 +5,9 @@
 	"directories": {
 		"lib": "lib"
 	},
-	"scripts": {},
+	"scripts": {
+		"test": "vitest"
+	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
