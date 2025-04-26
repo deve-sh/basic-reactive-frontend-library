@@ -3,10 +3,49 @@
 	<body>
 		<div id="root"></div>
 		<script type="module">
-			import { render, createElement } from "./lib/index.js";
+			import * as FrontendLib from "./lib/index.js";
 
-			window.render = render;
-			window.createElement = createElement;
+			const { useEffect, useState, useMemo, render, createElement } =
+				FrontendLib;
+
+			window.FrontendLib = FrontendLib;
+
+			const App = () => {
+				const [value, setValue] = useState(1);
+
+				useEffect(
+					() => console.log("[useEffect] Some side-effect here for new value", value),
+					[value]
+				);
+
+				const computedValue = useMemo(
+					() => "[useMemo] Computed square value is:" + value ** 2,
+					[value]
+				);
+
+				return createElement(
+					"div",
+					{
+						onClick: (event) =>
+							console.log("[events] Clicked on root div", event),
+					},
+					"[useState] Value is " + value,
+					createElement("br"),
+					createElement("br"),
+					createElement("div", null, computedValue),
+					createElement("br"),
+					createElement(
+						"button",
+						{ onClick: () => setValue(value + 1) },
+						"Click Me"
+					)
+				);
+			};
+
+			console.log("Rendering following component");
+			console.log(App.toString());
+
+			render(createElement(App), document.querySelector("#root"));
 		</script>
 	</body>
 </html>
