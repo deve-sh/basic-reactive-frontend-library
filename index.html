@@ -3,7 +3,10 @@
 	<body>
 		<div id="root"></div>
 		<script type="module">
-			//
+			import { render, createElement } from "./lib/index.js";
+
+			window.render = render;
+			window.createElement = createElement;
 		</script>
 	</body>
 </html>
