@@ -16,6 +16,10 @@ Built over the weekend for fun.
 - Teardown and cleanup 🟡 (Dependent on diffing and detecting which component has to unmount)
 - `SyntheticEvent` 🟡
 
+### Documentation
+
+See the full internal documentation [here](https://www.notion.so/deveshk/Building-a-Reactive-Frontend-Library-1de7df5fec8380f3be66ecea9962ce76)
+
 ### Setup
 
 ### Usage
